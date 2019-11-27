@@ -1,17 +1,30 @@
 var numericMessage = "* Este campo debe ser numerico";
 var letterMessage = "* Este campo no debe ser alphanumerico";
-
+/**Valida entrada de solo numeros 
+ * @param {Number} value: valor numerico a evaluar
+ * @returns {Boolean} si es valido retorna true
+*/
 function regexNumberValidator(value) {
   let numberValidate = /^[0-9]*$/gm;
   return numberValidate.test(value);
 }
+
+/**Valida entrada de solo caracteres latinos 
+ * @param {String} value: cadena de texto a evaluar
+ * @returns {Boolean} si es valido retorna true
+*/
 function regexLetterValidator(value) {
   let letterValidate = /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/g;
   return letterValidate.test(value);
 }
-function regexEmailValidator(value) {
+
+/**Valida la entrada de emails
+ * @param {String} email: cadena correo electronico a evaluar
+ * @returns {Boolean} si es valido retorna true
+ */
+function regexEmailValidator(email) {
   let emailValidate = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g;
-  return emailValidate.test(value);
+  return emailValidate.test(email);
 }
 
 function validator(userData) {
